@@ -1,0 +1,115 @@
+// Geomicons
+
+$font-primary: "freight-sans-pro", Helvetica, sans-serif;
+@import "basscss";
+
+.full-width { width: 100%; }
+.no-wrap { white-space: nowrap; }
+
+.ul {
+  list-style: none;
+  padding-left: 0;
+}
+.ul-inline li {
+  display: inline-block;
+}
+
+.btn {
+  display: inline-block;
+  line-height: 3;
+  padding-right: 2em;
+  padding-left: 2em;
+  border-radius: .25em;
+}
+.aspect-4o3 {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+.rounded { border-radius: .25*$space; }
+.measure { max-width: 40em; }
+
+.target-show {
+  display:none;
+  &:target {
+    display: block;
+  }
+}
+@media (max-width: 640px) {
+  .mobile-hide { display: none; }
+}
+
+@media (min-width: 768px){
+  // .golden-a {
+  //   width: percentage( 1.618 / 2.618 );
+  // }
+  // .golden-b {
+  //   width: calc( #{percentage( 1 / 2.618 )} - #{ 4 * $space } );
+  //   margin-right: 4 * $space;
+  // }
+
+  // Responsive padding
+  .p2 { padding: 3*$space; }
+  
+  .tiles {
+    overflow: hidden;
+    margin-right: -3 * $space;
+  }
+  .tile {
+    float: left;
+    width: calc(50% - #{ 3 * $space });
+    margin-right: 3 * $space;
+  }
+}
+// Theme
+
+$blue: #0096cc;
+$dark: #1C2226;
+$light-gray: #dadfe0;
+
+.theme-geo {
+
+  color: $dark;
+  background-color: white;
+  a {
+    color: $blue;
+    text-decoration: none;
+    &:hover {
+      color: saturate($blue, 80%);
+    }
+  }
+  .reverse {
+    color: white;
+    background-color: $dark;
+  }
+  .reverse-blue {
+    color: white;
+    background-color: $blue;
+    a {
+      color: $dark;
+      &:hover {
+        color: lighten($dark, 10%);
+      }
+    }
+  }
+  .btn {
+    color: white;
+    background-color: $blue;
+    &:hover {
+      color: white;
+      background-color: darken($blue, 20%);
+    }
+    &:active {
+      box-shadow: inset 0 .25em .25em rgba($dark, .4);
+    }
+  }
+
+}
+.bg-light-gray {
+  background-color: $light-gray; 
+}
+

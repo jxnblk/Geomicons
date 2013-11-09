@@ -1,773 +1,315 @@
 /*
 
-        Mathematical
-        A simple, responsive framework
-        
-        Made with love by Jxnblk
+  BASSCSS
 
+  Part reset, part boilerplate, part framework, all minimal.
+
+  BASSCSS is a small reset and collection of simple type and layout
+  classes that can be used as the basis for any web project.
+  Use it out of the box or as a base for a larger SASS project.
+
+
+  Contents:
+  1. Reset
+  2. Typography
+     a. Default Font Stack
+     b. Base Type Scale
+     c. Responsive Type Scale
+     d. Utilities
+  3. Layout
+     a. Margins
+     b. Padding
+     c. Display
+     d. Utilities
+
+
+  Made with love by Jxnblk
 
 */
-/*
-
-        Mathematical Base
-
-
-*/
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-  display: block; }
-
-audio, canvas, video {
-  display: inline-block; }
-
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-[hidden] {
-  display: none; }
-
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
-  margin: 0;
-  padding: 0; }
-
-a:focus {
-  outline: thin dotted; }
-
-a:active, a:hover {
-  outline: 0; }
-
-b, strong {
-  font-weight: bold; }
-
-dfn {
-  font-style: italic; }
-
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0; }
-
-mark {
-  background: #ff0;
-  color: #000; }
-
-code, kbd, pre, samp {
-  font-family: monospace, serif;
-  font-size: 1em; }
-
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019"; }
-
-small {
-  font-size: 80%; }
-
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sup {
-  top: -0.5em; }
-
-sub {
-  bottom: -0.25em; }
-
-img {
-  border: 0; }
-
-svg:not(:root) {
-  overflow: hidden; }
-
-figure {
+body, h1, h2, h3, h4, h5, h6, dl, ol, ul, p, button, input, select, textarea {
   margin: 0; }
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
-legend {
-  border: 0;
-  padding: 0; }
 
 button, input, select, textarea {
   font-family: inherit;
-  font-size: 100%;
-  margin: 0; }
+  font-size: 100%; }
 
-button, input {
-  line-height: normal; }
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+  display: block; }
 
-button, select {
-  text-transform: none; }
-
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer; }
-
-button[disabled], html input[disabled] {
-  cursor: default; }
-
-input[type="checkbox"], input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0; }
-
-input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box; }
-
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-
-textarea {
-  overflow: auto;
-  vertical-align: top; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-/*
-
-        Mathematical Type
-
-
-*/
 body {
-  font-size: 100%;
+  font-family: "freight-sans-pro", Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400; }
 
 h1, .h1 {
   font-size: 2rem;
-  line-height: 1.25;
-  font-weight: 400; }
+  line-height: 1.25; }
 
 h2, .h2 {
-  font-size: 1.25rem;
-  line-height: 1.25;
-  font-weight: 400; }
+  font-size: 1.5rem;
+  line-height: 1.25; }
 
-p, ul, ol, .p, h3, h4, h5, h6 {
-  font-size: 1.125rem;
-  font-weight: 400; }
+h3, h4, h5, h6, dl, ol, ul, p, .p {
+  font-size: 1.125em; }
 
 small, .small {
-  font-size: .875rem;
-  -webkit-text-size-adjust: 100%; }
+  font-size: .875em; }
+
+@media (min-width: 768px) {
+  .responsive .h1, .responsive.h1 {
+    font-size: 4rem; }
+  .responsive .h2, .responsive.h2 {
+    font-size: 2rem; }
+  .responsive .p, .responsive.p {
+    font-size: 1.25rem; }
+  .responsive .small, .responsive.small {
+    font-size: 1rem; } }
+@media (min-width: 1024px) {
+  .responsive .h1, .responsive.h1 {
+    font-size: 6rem; }
+  .responsive .h2, .responsive.h2 {
+    font-size: 3rem; } }
 
 strong, .bold {
-  font-weight: 700; }
+  font-weight: bold; }
+
+.regular {
+  font-weight: normal; }
 
 .caps {
   text-transform: uppercase;
   letter-spacing: .2em; }
 
-.txtcen {
+.center {
   text-align: center; }
 
-.txtri {
+.right-align {
   text-align: right; }
 
-    /*
-@media screen and (min-width: 480px) {
-      .h1 { font-size: 3rem; }
-      .h2 { font-size: 1.75rem; }
-      .p { font-size: 1.25rem; }
-      .small { font-size: 1rem; }
-    }
-*/
-@media screen and (min-width: 640px) {
-  .h1-tab {
-    font-size: 4rem; }
-
-  .h2-tab {
-    font-size: 2rem; } }
-@media screen and (min-width: 1024px) {
-  .h1-desk {
-    font-size: 6rem; }
-
-  .h2-desk {
-    font-size: 3rem; } }
-/*
-
-        Mathematical Structure
-
-
-*/
-.mar0 {
-  margin: 0; }
-
-.mar {
-  margin: 1rem; }
-
-.marto {
-  margin-top: 1rem; }
-
-.marri {
-  margin-right: 1rem; }
-
-.marbo {
+.type-margins h1, .type-margins .h1 {
+  margin-bottom: 1rem; }
+.type-margins h2, .type-margins .h2 {
+  margin-bottom: 1rem; }
+.type-margins h3, .type-margins h4, .type-margins h5, .type-margins h6, .type-margins p, .type-margins dl, .type-margins ol, .type-margins ul {
   margin-bottom: 1rem; }
 
-.marle {
+.m1 {
+  margin: 1rem; }
+
+.mt1 {
+  margin-top: 1rem; }
+
+.mr1 {
+  margin-right: 1rem; }
+
+.mb1 {
+  margin-bottom: 1rem; }
+
+.ml1 {
   margin-left: 1rem; }
 
-.marto2 {
+.m2 {
+  margin: 2rem; }
+
+.mt2 {
   margin-top: 2rem; }
 
-.marri2 {
+.mr2 {
   margin-right: 2rem; }
 
-.marbo2 {
+.mb2 {
   margin-bottom: 2rem; }
 
-.marle2 {
+.ml2 {
   margin-left: 2rem; }
 
-.pad0 {
-  padding: 0; }
+.m3 {
+  margin: 3rem; }
 
-.pad {
+.mt3 {
+  margin-top: 3rem; }
+
+.mr3 {
+  margin-right: 3rem; }
+
+.mb3 {
+  margin-bottom: 3rem; }
+
+.ml3 {
+  margin-left: 3rem; }
+
+.m4 {
+  margin: 4rem; }
+
+.mt4 {
+  margin-top: 4rem; }
+
+.mr4 {
+  margin-right: 4rem; }
+
+.mb4 {
+  margin-bottom: 4rem; }
+
+.ml4 {
+  margin-left: 4rem; }
+
+.mxa {
+  margin-right: auto;
+  margin-left: auto; }
+
+.p1 {
   padding: 1rem; }
 
-.padto {
-  padding-top: 1rem; }
-
-.padri {
-  padding-right: 1rem; }
-
-.padbo {
-  padding-bottom: 1rem; }
-
-.padle {
+.px1 {
+  padding-right: 1rem;
   padding-left: 1rem; }
 
-.pad2 {
+.py1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+.p2 {
   padding: 2rem; }
 
-.padto2 {
-  padding-top: 2rem; }
-
-.padri2 {
-  padding-right: 2rem; }
-
-.padbo2 {
-  padding-bottom: 2rem; }
-
-.padle2 {
+.px2 {
+  padding-right: 2rem;
   padding-left: 2rem; }
 
-@media screen and (min-width: 640px) {
-  /*
-        .mar   {  margin:         2rem; }
-        .marto {  margin-top:     2rem; }
-        .marri {  margin-right:   2rem; }
-        .marbo {  margin-bottom:  2rem; }
-        .marle {  margin-left:    2rem; }
-        
-        .marto2 { margin-top:     4rem; }
-        .marri2 { margin-right:   4rem; }
-        .marbo2 { margin-bottom:  4rem; }
-        .marle2 { margin-left:    4rem; }
-  */
-  .pad {
-    padding: 2rem; }
+.py2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
 
-  .padto {
-    padding-top: 2rem; }
+.p3 {
+  padding: 3rem; }
 
-  .padri {
-    padding-right: 2rem; }
+.px3 {
+  padding-right: 3rem;
+  padding-left: 3rem; }
 
-  .padbo {
-    padding-bottom: 2rem; }
+.py3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
 
-  .padle {
-    padding-left: 2rem; }
+.p4 {
+  padding: 4rem; }
 
-  .pad2 {
-    padding: 4rem; }
+.px4 {
+  padding-right: 4rem;
+  padding-left: 4rem; }
 
-  .padto2 {
-    padding-top: 4rem; }
+.py4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
 
-  .padri2 {
-    padding-right: 4rem; }
+.inline {
+  display: inline; }
 
-  .padbo2 {
-    padding-bottom: 4rem; }
-
-  .padle2 {
-    padding-left: 4rem; } }
-.tappad {
-  padding: 0 1rem;
-  line-height: 3rem; }
-
-@media screen and (max-width: 640px) {
-  .tappad {
-    margin-right: -1rem;
-    margin-left: -1rem;
-    display: block; } }
-.bobox {
-  box-sizing: border-box; }
-
-.disb {
+.block {
   display: block; }
 
-.disib {
+.inline-block {
   display: inline-block; }
 
-.vert-mid {
+.table {
+  display: table; }
+
+.table-cell {
+  display: table-cell;
   vertical-align: middle; }
 
-.fl {
+.clearfix {
+  overflow: hidden; }
+
+.left {
   float: left; }
 
-.fr {
+.right {
   float: right; }
 
-.wrap {
-  margin: 0 auto; }
+.fit {
+  max-width: 100%; }
 
-.posrel {
-  position: relative; }
-
-.posabs {
-  position: absolute; }
-
-.fill {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto; }
-
-.to0 {
-  top: 0; }
-
-.ri0 {
-  right: 0; }
-
-.bo0 {
-  bottom: 0; }
-
-.le0 {
-  left: 0; }
-
-.to1 {
-  top: 1rem; }
-
-.ri0 {
-  right: 1rem; }
-
-.bo1 {
-  bottom: 1rem; }
-
-.le1 {
-  left: 1rem; }
-
-.to2 {
-  top: 2rem; }
-
-.ri2 {
-  right: 2rem; }
-
-.bo2 {
-  bottom: 2rem; }
-
-.le2 {
-  left: 2rem; }
-
-.z1 {
-  z-index: 100; }
-
-.z2 {
-  z-index: 200; }
-
-.z3 {
-  z-index: 300; }
-
-.z4 {
-  z-index: 400; }
-
-.z5 {
-  z-index: 500; }
-
-.overhide {
-  overflow: hidden; }
-
-.scroll-y {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; }
-
-.sq16 {
-  width: 16px;
-  height: 16px; }
-
-.sq24 {
-  width: 24px;
-  height: 24px; }
-
-.sq32 {
-  width: 32px;
-  height: 32px; }
-
-.sq48 {
-  width: 48px;
-  height: 48px; }
-
-.sq64 {
-  width: 64px;
-  height: 64px; }
-
-.sq96 {
-  width: 96px;
-  height: 96px; }
-
-.sq128 {
-  width: 128px;
-  height: 128px; }
-
-.sq160 {
-  width: 160px;
-  height: 160px; }
-
-.sq256 {
-  width: 256px;
-  height: 256px; }
-
-.sq320 {
-  width: 320px;
-  height: 320px; }
-
-.sq512 {
-  width: 512px;
-  height: 512px; }
-
-.sq768 {
-  width: 768px;
-  height: 768px; }
-
-.sq64-txt {
-  line-height: 64px; }
-
-.sq96-txt {
-  line-height: 96px; }
-
-.sq128-txt {
-  line-height: 128px; }
-
-.minhi16 {
-  min-height: 16px; }
-
-.minhi24 {
-  min-height: 24px; }
-
-.minhi32 {
-  min-height: 32px; }
-
-.minhi48 {
-  min-height: 48px; }
-
-.minhi64 {
-  min-height: 64px; }
-
-.minhi96 {
-  min-height: 96px; }
-
-.minhi128 {
-  min-height: 128px; }
-
-.wi100 {
+.full-width {
   width: 100%; }
 
-.wi90 {
-  width: 90%; }
+.no-wrap {
+  white-space: nowrap; }
 
-.wi75 {
-  width: 80%; }
+.ul {
+  list-style: none;
+  padding-left: 0; }
 
-.wi50 {
-  width: 75%; }
+.ul-inline li {
+  display: inline-block; }
 
-.wi25 {
-  width: 25%; }
-
-.maxwi640 {
-  max-width: 640px; }
-
-.grid1 {
-  float: left;
-  width: 100%;
-  box-sizing: border-box; }
-
-@media screen and (min-width: 768px) {
-  .grid1-25 {
-    width: 25%; }
-
-  .grid1-40 {
-    width: 40%; }
-
-  .grid1-50 {
-    width: 50%; }
-
-  .grid1-60 {
-    width: 60%; }
-
-  .grid1-75 {
-    width: 75%; }
-
-  .grid1-gutter {
-    padding-right: 4rem; } }
-@media screen and (max-width: 512px) {
-  .mob-hide {
-    display: none; } }
-@media screen and (max-width: 768px) {
-  .tab-hide {
-    display: none; } }
-/*
-
-        Mathematical Modules
-
-
-*/
-.media {
-  overflow: hidden; }
-  .media .img {
-    float: left; }
-  .media .bd {
-    overflow: hidden; }
-
-@media screen and (max-width: 512px) {
-  .media-fold512 .img {
-    float: none; } }
-@media screen and (max-width: 767px) {
-  .media-fold768 .img {
-    float: none; } }
 .btn {
   display: inline-block;
-  overflow: hidden; }
+  line-height: 3;
+  padding-right: 2em;
+  padding-left: 2em;
+  border-radius: .25em; }
 
-.btn-med {
-  line-height: 48px;
-  padding: 0 16px; }
-
-.btn-big {
-  line-height: 64px;
-  padding: 0 16px; }
-
-.cap-left {
-  padding: 0 16px;
-  margin-left: -16px; }
-
-.cap-right {
-  padding: 0 16px;
-  margin-right: -16px; }
-
-.modal {
-  display: none;
+.aspect-4o3 {
   width: 100%;
-  min-height: 100%;
-  position: fixed;
-  overflow-y: scroll;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1024; }
-  .modal:target {
-    display: block; }
+  height: 0;
+  padding-bottom: 75%; }
 
-.drawer {
+.bg-cover {
+  background-size: cover;
+  background-position: center; }
+
+.rounded {
+  border-radius: 0.25rem; }
+
+.measure {
+  max-width: 40em; }
+
+.target-show {
   display: none; }
-  .drawer:target {
-    display: block; }
-
-.hover-show {
-  display: none; }
-
-.hover-group:hover .hover-show {
+.target-show:target {
   display: block; }
 
-/*
+@media (max-width: 640px) {
+  .mobile-hide {
+    display: none; } }
+@media (min-width: 768px) {
+  .p2 {
+    padding: 3rem; }
 
-        Mathematical Theme
+  .tiles {
+    overflow: hidden;
+    margin-right: -3rem; }
 
-
-*/
-body {
-  color: #444444;
-  background-color: #fff;
-  font-family: "freight-sans-pro", Helvetica, sans-serif; }
-
-a {
-  color: #00ccff;
+  .tile {
+    float: left;
+    width: calc(50% - 3rem);
+    margin-right: 3rem; } }
+.theme-geo {
+  color: #1c2226;
+  background-color: white; }
+.theme-geo a {
+  color: #0096cc;
   text-decoration: none; }
+.theme-geo a:hover {
+  color: #0096cc; }
+.theme-geo .reverse {
+  color: white;
+  background-color: #1c2226; }
+.theme-geo .reverse-blue {
+  color: white;
+  background-color: #0096cc; }
+.theme-geo .reverse-blue a {
+  color: #1c2226; }
+.theme-geo .reverse-blue a:hover {
+  color: #323c43; }
+.theme-geo .btn {
+  color: white;
+  background-color: #0096cc; }
+.theme-geo .btn:hover {
+  color: white;
+  background-color: #004b66; }
+.theme-geo .btn:active {
+  box-shadow: inset 0 0.25em 0.25em rgba(28, 34, 38, 0.4); }
 
-a:hover {
-  color: #00a3cc; }
-
-.dkgry {
-  color: #444444; }
-
-.mdgry {
-  color: #999999; }
-
-.ltgry {
-  color: #eeeeee; }
-
-.wht {
-  color: #fff; }
-
-.link {
-  color: #00ccff; }
-
-.bg-dkgry {
-  background-color: #444444; }
-
-.bg-mdgry {
-  background-color: #999999; }
-
-.bg-ltgry {
-  background-color: #eeeeee; }
-
-.bg-wht {
-  background-color: #fff; }
-
-.bg-link {
-  background-color: #00ccff; }
-
-.boto {
-  border-top: 1px solid; }
-
-.bori {
-  border-right: 1px solid; }
-
-.bobo {
-  border-bottom: 1px solid; }
-
-.bole {
-  border-left: 1px solid; }
-
-.bo-dkgry {
-  border-color: #444444; }
-
-.bo-mdgry {
-  border-color: #999999; }
-
-.bo-ltgry {
-  border-color: #eeeeee; }
-
-.bo-wht {
-  border-color: #fff; }
-
-.rc, .btn {
-  border-radius: .25rem; }
-
-.circ {
-  border-radius: 50%; }
-
-.btn-link {
-  color: #fff;
-  background-color: #00ccff; }
-  .btn-link:hover {
-    color: #fff;
-    background-color: #33d6ff; }
-  .btn-link:active {
-    box-shadow: inset 0 2px 4px rgba(68, 68, 68, 0.5); }
-
-.btn-gry {
-  color: #fff;
-  background-color: #999999; }
-  .btn-gry:hover {
-    color: #fff;
-    background-color: #b3b3b3; }
-  .btn-gry:active {
-    box-shadow: inset 0 2px 4px rgba(68, 68, 68, 0.5); }
-
-.bg-darken {
-  background-color: rgba(0, 0, 0, 0.2); }
-
-/*
-
-        Mathematical Icons
-
-
-*/
-/*
-
-        Mathematical Animations
-
-
-*/
-.anim-fast {
-  -webkit-animation-duration: .1s;
-  -webkit-animation-timing-function: linear; }
-
-.anim-med {
-  -webkit-animation-duration: .2s;
-  -webkit-animation-timing-function: linear; }
-
-.anim-slow {
-  -webkit-animation-duration: .5s;
-  -webkit-animation-timing-function: linear; }
-
-.anim-slow2 {
-  -webkit-animation-duration: 2s;
-  -webkit-animation-timing-function: linear; }
-
-@-webkit-keyframes pop-in {
-  0% {
-    -webkit-transform: scale(0.8); }
-
-  95% {
-    -webkit-transform: scale(1.1); }
-
-  100% {
-    -webkit-transform: scale(1); } }
-
-.pop-in {
-  -webkit-animation-name: pop-in; }
-
-@-webkit-keyframes grow-in {
-  0% {
-    -webkit-transform: scale(0.8); }
-
-  100% {
-    -webkit-transform: scale(1); } }
-
-.grow-in {
-  -webkit-animation-name: grow-in; }
-
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: .5; }
-
-  100% {
-    opacity: 1; } }
-
-.fade-in {
-  -webkit-animation-name: fade-in; }
-
-@-webkit-keyframes accordion-open {
-  0% {
-    height: 0; }
-
-  100% {
-    height: auto;
-    min-height: 48px;
-    max-height: 4096px; } }
-
-.accordion-open {
-  -webkit-animation-name: accordion-open; }
-
-.grow-fade-in {
-  -webkit-animation-name: grow-in, fade-in; }
+.bg-light-gray {
+  background-color: #dadfe0; }
