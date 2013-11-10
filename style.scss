@@ -30,6 +30,27 @@ $font-primary: "freight-sans-pro", Helvetica, sans-serif;
   background-size: cover;
   background-position: center;
 }
+
+.relative { position: relative; }
+.absolute-center {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+}
+.circle {
+  text-align: center;
+  white-space: nowrap;
+  line-height: 5;
+  width: 5em; height: 5em;
+  border-radius: 50%;
+}
+.hover-group {
+  .hover-show { display: none; }
+  &:hover .hover-show { display: block; }
+  .hover-fade-in { opacity: 0; -webkit-transform: scale(.8); -webkit-transition: all .3s ease; }
+  &:hover .hover-fade-in { opacity: 1; -webkit-transform: scale(1); }
+}
+
 .rounded { border-radius: .25*$space; }
 .measure { max-width: 40em; }
 
@@ -109,7 +130,26 @@ $light-gray: #dadfe0;
   }
 
 }
+.bg-white { background-color: white; }
 .bg-light-gray {
   background-color: $light-gray; 
 }
 
+// Animations
+// @-webkit-keyframes popin,
+@-webkit-keyframes popin {
+  from { 
+    opacity: .8;
+    -webkit-transform: scale(.5);
+            transform: scale(.5);
+  }
+  to   {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.anim-popin {
+  -webkit-animation: popin .2s ease;
+          animation: popin .2s ease;
+}
