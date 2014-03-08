@@ -14,12 +14,15 @@
 @import "type";
 @import "margins";
 @import "padding";
+@import "table-object";
 @import "utilities";
 @import "buttons";
 @import "lists";
 @import "positions";
-@import "table-object";
-@import "banner";
-@import "states";
+
+@import "geomicon-grid";
+@import "geomicons";
+
 @import "theme";
+//@import "highlight";
 

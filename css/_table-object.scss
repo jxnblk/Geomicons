@@ -1,12 +1,14 @@
-// Table Object
 
-.table {
-  display: table;
-  width: 100%;
-}
+@media (min-width: 48em) {
+  .table {
+    display: table;
+    width: 100%;
+    //table-layout: fixed;
+  }
 
-.table-cell {
-  display: table-cell;
-  vertical-align: middle;
+  .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 
